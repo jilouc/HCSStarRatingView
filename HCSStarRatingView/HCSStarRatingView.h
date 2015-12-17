@@ -33,6 +33,8 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable BOOL allowsHalfStars;
 @property (nonatomic) IBInspectable BOOL accurateHalfStars;
 @property (nonatomic) IBInspectable BOOL continuous;
+@property (nonatomic) IBInspectable UIColor *starBackgroundColor;
+@property (nonatomic) IBInspectable NSUInteger borderWidth;
 
 @property (nonatomic) BOOL shouldBecomeFirstResponder;
 

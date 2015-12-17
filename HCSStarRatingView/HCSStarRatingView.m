@@ -70,6 +70,7 @@
     _value = 0;
     _spacing = 5.f;
     _continuous = YES;
+    _borderWidth = 1;
 }
 
 - (void)setNeedsLayout {
@@ -238,6 +239,10 @@
     clipPath.usesEvenOddFillRule = YES;
     
     CGContextSaveGState(UIGraphicsGetCurrentContext()); {
+        if (self.starBackgroundColor && progress > 0.) {
+            [self.starBackgroundColor setFill];
+            [starShapePath fill];
+        }
         [clipPath addClip];
         [tintColor setFill];
         [starShapePath fill];
@@ -245,7 +250,7 @@
     CGContextRestoreGState(UIGraphicsGetCurrentContext());
     
     [tintColor setStroke];
-    starShapePath.lineWidth = 1;
+    starShapePath.lineWidth = self.borderWidth;
     [starShapePath stroke];
 }
 
