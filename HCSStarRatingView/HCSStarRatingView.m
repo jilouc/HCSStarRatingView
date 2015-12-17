@@ -239,7 +239,7 @@
     clipPath.usesEvenOddFillRule = YES;
     
     CGContextSaveGState(UIGraphicsGetCurrentContext()); {
-        if (self.starBackgroundColor && progress > 0.) {
+        if (self.starBackgroundColor && progress < 1.) {
             [self.starBackgroundColor setFill];
             [starShapePath fill];
         }
